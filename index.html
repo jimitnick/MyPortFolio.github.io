@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortFolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #fff;
+            font-family: "Source Code Pro", monospace;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #main{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background-color: #1C1B23;
+            z-index: 0;
+            overflow: hidden;
+        }
+        #main #cursor{
+            position: absolute;
+            transition: all ease linear 0.01s;
+            mix-blend-mode: difference;
+            z-index: 1;
+            background-color: #01FF9C;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+        }
+        #page1 #mid::selection{
+            background: #01FF9C;
+            color: #222;
+        }
+        #main #page1 #mid #circle{
+            box-shadow: 0px 0px 22px 10px #01FF9C;
+        }
+        #main #corner{
+            z-index: -1;
+            height: 20rem;
+            width: 20rem;
+            background-color: #01FF9C;
+            opacity: 0.1;
+            margin-left: -10%;
+            left: -10%;
+            animation: circle1 1s linear  infinite alternate;
+            border-radius: 50%;
+        }
+        #main #corner1{
+            z-index: -1;
+            height: 20rem;
+            width: 20rem;
+            background-color: #01FF9C;
+            opacity: 0.1;
+            top: 60%;
+            border-radius: 50%;
+            right: -12%;
+            animation: circle 1s linear  infinite alternate;
+            position: absolute;
+        }
+        @keyframes circle {
+            from{
+                transform: translate(10px,-20px);
+                opacity: 0;
+            }
+            to{
+                transform: translateX(10px);
+                opacity: 0.1;
+            }
+        }
+        @keyframes circle1 {
+            from{
+                transform: translate(-20px,-40px);
+            }
+            to{
+                transform: translateX(0px);
+            }
+        }
+        #main #page1{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            height: 100%;
+            width: 70%;
+        }
+        #page1 #nav{
+            display: flex;
+            height: 10%;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            z-index: 0;
+        }   
+        #page1 #nav #left{
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+        #page1 #nav #left h1{
+            cursor: pointer;
+            animation: portfolio 1s linear infinite  alternate;
+        }
+        @keyframes portfolio {
+            from{
+                color: #fff;
+            }
+            to{
+                color: #01FF9C;
+            }
+        }
+        #page1 #nav #left .dot{
+            align-content: center;
+            color: #01FF9C;
+            scale: 1.1;
+            font-size: 2vw;
+        }
+        #page1 #nav #right{
+            height: 100%;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            justify-content: center;
+        }
+        #page1 #nav #right li{
+            list-style: none;
+            cursor: pointer;
+            padding-bottom: 5px;
+        }
+        #page1 #nav #right li:hover{
+            color: #01FF9C;
+            border-bottom: solid 2px #01FF9C;
+            transition: all ease-in-out 0.1s;
+        }
+        #page1 #nav #right button{
+            background-color: #01FF9C;
+            border-radius: 20px;
+            padding: 10px 35px;
+            border: none;
+            color: #222;
+            font-weight: 700;
+            margin-bottom: 8px;
+            border: solid 2px #01FF9C;
+            cursor: pointer;
+        }
+        #page1 #nav #right button:hover{
+            background-color: #222;
+            color: #01FF9C;
+            transition: all ease-in-out 0.2s;
+        }
+        #page1 #aboutMePage{
+            display: none;
+            background-color: #222  ;
+            width: 50%;
+            height: 90%;
+            position: absolute;
+            border-radius: 30px;
+            box-shadow: 0px 0px 5112px 1122px #01d0ff   ;
+            top: 6%;
+            left: 25%;
+            opacity: 0;
+            animation: slide2 0.2s linear  forwards; 
+            z-index: 2;
+            transform-origin: center center;
+            flex-direction: column;
+        }
+        #page1 #aboutMePage #icon{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            right: 5%;
+            top: 3%;
+            justify-content: center;
+            align-items: center;
+        }
+        #page1 #aboutMePage #content{
+            display: flex;
+            flex-direction: column;
+            top: 5%;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #page1 #aboutMePage #content h2{
+            margin-top: 5%;
+            text-align: center;
+        }
+        #page1 #aboutMePage #content #div1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10%;
+            margin-left: 10%;
+            background-color: rgba(62, 62, 62, 0.092);
+            margin-right: 10%;
+            text-align: center;
+        }
+        #page1 #aboutMePage #content #div1 h1{
+            font-size: 1.5rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #aboutMePage #content #div2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10%;
+            margin-left: 10%;
+            background-color: rgba(62, 62, 62, 0.092);
+            margin-right: 10%;
+            text-align: center;
+        }
+        #page1 #aboutMePage #content #div2 h1{
+            font-size: 1.5rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #aboutMePage #content #div3,#div4{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            gap: 12px;
+            width: 100%;
+            margin-top: 10%;
+            margin-left: 10%;
+            background-color: rgba(62, 62, 62, 0.092);
+            margin-right: 10%;
+            text-align: center;
+        }
+        #page1 #aboutMePage #content #div3 h1{
+            font-size: 1.5rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #aboutMePage #content #div4 h1{
+            font-size: 1.5rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #aboutMePage #content .divs{
+            cursor: pointer;
+        }
+        #page1 #aboutMePage #content .divs:hover{
+            scale: 1.05;
+            transition: all ease-in-out 0.3s;
+        }
+        #page1 #aboutMePage #icon .fa-x{
+            position: absolute;
+            align-content: center;
+            color: #222;
+        }
+
+
+        #page1 #hireMePage{
+            display: none;
+            background-color: #1C1B23;
+            width: 50%;
+            height: 90%;
+            position: absolute;
+            border-radius: 30px;
+            box-shadow: 0px 0px 5112px 1122px #01FF9C;
+            top: 6%;
+            left: 25%;
+            opacity: 0;
+            animation: slide 0.2s linear  forwards; 
+            z-index: 2;
+            transform-origin: center center;
+            flex-direction: column;
+        }
+        #page1 #hireMePage #icon{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            right: 5%;
+            top: 3%;
+            justify-content: center;
+            align-items: center;
+        }
+        #page1 #hireMePage #content{
+            display: flex;
+            flex-direction: column;
+            top: 5%;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #page1 #hireMePage #content h2{
+            margin-top: 5%;
+            text-align: center;
+        }
+        #page1 #hireMePage #content #div1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10%;
+            margin-left: 10%;
+            background-color: rgba(62, 62, 62, 0.092);
+            margin-right: 10%;
+            text-align: center;
+        }
+        #page1 #hireMePage #content #div1 h1{
+            font-size: 4rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #hireMePage #content #div2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10%;
+            margin-left: 10%;
+            background-color: rgba(62, 62, 62, 0.092);
+            margin-right: 10%;
+            text-align: center;
+        }
+        #page1 #hireMePage #content #div2 h1{
+            font-size: 4rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #hireMePage #content #div3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10%;
+            margin-left: 10%;
+            background-color: rgba(62, 62, 62, 0.092);
+            margin-right: 10%;
+            text-align: center;
+        }
+        #page1 #hireMePage #content #div3 h1{
+            font-size: 4rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #hireMePage #content .divs{
+            cursor: pointer;
+        }
+        #page1 #hireMePage #content .divs:hover{
+            scale: 1.05;
+            background-color: #fff;
+            color: #222;
+            transition: all ease-in-out 0.3s;
+        }
+        #page1 #hireMePage #icon .fa-x{
+            position: absolute;
+            align-content: center;
+            color: #222;
+        }
+        #page1 #contactPage{
+            display: none;
+            background-color: #1C1B23;
+            width: 50%;
+            height: 90%;
+            position: absolute;
+            border-radius: 30px;
+            box-shadow: 0px 0px 5112px 1122px #01ffea;
+            top: 6%;
+            left: 25%;
+            opacity: 0;
+            animation: slide1 0.2s linear  forwards; 
+            z-index: 2;
+            transform-origin: center center;
+            flex-direction: column;
+        }
+        #page1 #contactPage #icon{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            right: 5%;
+            top: 3%;
+            justify-content: center;
+            align-items: center;
+        }
+        #page1 #contactPage #content{
+            display: flex;
+            flex-direction: column;
+            top: 5%;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #page1 #contactPage #content h2{
+            margin-top: 5%;
+            text-align: center;
+        }
+        #page1 #contactPage #content #div1,#div2,#div3{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            gap: 10px;
+            width: 100%;
+            margin-top: 10%;
+            margin-left: 10%;
+            background-color: rgba(62, 62, 62, 0.092);
+            margin-right: 10%;
+            text-align: center;
+        }
+        #page1 #contactPage #content #div3{
+            height: 40%;
+            flex-direction: column;
+        }
+        #page1 #contactPage #content #div3 p{
+            letter-spacing: 3.3px;
+        }
+        #page1 #contactPage #content #div3 form{
+            padding: 20px;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        #page1 #contactPage #content #div3 form textarea{
+            width: 100%;
+            min-height: 50%;
+            min-width: 100%;
+            color: #222;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+        }
+        #page1 #contactPage #content #div3 form textarea:focus{
+            border: solid 2px #01FFEA;
+        }
+        #page1 #contactPage #content #div3 form button{
+            height: 3rem;
+            border-radius: 10px;
+            background-color: #01FFEA;
+            color: #1C1B23;
+            cursor: pointer;
+        }
+        #page1 #contactPage #content #div3 form button:hover{
+            background-color: #01d0ff;
+        }
+        #page1 #contactPage #content #div1 h1{
+            font-size: 2rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #contactPage #content #div2 h1{
+            font-size: 2rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #contactPage #content #div3 h1{
+            font-size: 2rem;
+            margin-right: 5%;
+            margin-left: 2%;
+        }
+        #page1 #contactPage #content .divs{
+            cursor: pointer;
+        }
+        #page1 #contactPage #content .divs:hover{
+            scale: 1.05;
+            transition: all ease-in-out 0.3s;
+        }
+        #page1 #contactPage #icon .fa-x{
+            position: absolute;
+            align-content: center;
+            color: #222;
+        }
+        @keyframes slide {
+            0%{
+                opacity: 0;
+                top: 6%;
+                transform: translateX(-100%);
+                transition: all ease-in-out 1s;
+            }
+            25%{
+                opacity: 0.1;
+                top: 6%;
+                transform: translateX(-75%);
+                transition: all ease-in-out 1s;
+            }
+            50%{
+                opacity: 0.3;
+                top: 6%;
+                transform: translateX(-50%);
+                transition: all ease-in-out 1s;
+            }
+            75%{
+                opacity: 0.4;
+                top: 6%;
+                transform: translateX(-25%);
+                transition: all ease-in-out 1s;
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0%);
+                transition: all ease-in-out 1s;
+            }
+        }
+        @keyframes slide2 {
+            0%{
+                opacity: 0;
+                top: 6%;
+                transform: translateX(100%);
+                transition: all ease-in-out 1s;
+            }
+            25%{
+                opacity: 0.1;
+                top: 6%;
+                transform: translateX(75%);
+                transition: all ease-in-out 1s;
+            }
+            50%{
+                opacity: 0.3;
+                top: 6%;
+                transform: translateX(50%);
+                transition: all ease-in-out 1s;
+            }
+            75%{
+                opacity: 0.4;
+                top: 6%;
+                transform: translateX(25%);
+                transition: all ease-in-out 1s;
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0%);
+                transition: all ease-in-out 1s;
+            }
+        }
+        @keyframes slide1 {
+            0%{
+                opacity: 0;
+                top: 6%;
+                transform: translateY(-100%);
+                transition: all ease-in-out 1s;
+            }
+            25%{
+                opacity: 0.1;
+                top: 6%;
+                transform: translateY(-75%);
+                transition: all ease-in-out 1s;
+            }
+            50%{
+                opacity: 0.3;
+                top: 6%;
+                transform: translateY(-50%);
+                transition: all ease-in-out 1s;
+            }
+            75%{
+                opacity: 0.4;
+                top: 6%;
+                transform: translateY(-25%);
+                transition: all ease-in-out 1s;
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0%);
+                transition: all ease-in-out 1s;
+            }
+        }
+        #page1 #mid{
+            width: 100%;
+            height: 90%;
+            display: flex;
+            gap: 5%;
+            position: relative;
+            top: 1%;
+        }
+        #page1 #mid #circle{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -1;
+            width: 1100px;
+            height: 1100px;
+            border-radius: 50%;
+            background-color: #01FF9C;
+            opacity: 0.1;
+        }
+        #page1 #mid #left{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            margin-right: 10rem;
+        }
+        #page1 #mid #btm{
+            margin-top: 20px;
+            display: flex;
+            gap: 25px;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        #page1 #mid #btm .cv{
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: solid 1px #01FF9C;
+            background-color: #1C1B23;
+            color: #01FF9C;
+            letter-spacing: 2.3px;
+            cursor: pointer;
+            text-align: center;
+        }
+        #page1 #mid #btm .cv:hover{
+            background-color: #01FF9C;
+            color: #222;
+            transition: all ease-in-out 0.2s;
+        }
+        #page1 #mid #btm .fa-download{
+            color: #01FF9C;
+            margin-left: 1px;
+        }
+        #page1 #mid #btm .fa-github,.fa-youtube,.fa-linkedin{
+            color: #01FF9C;
+            margin-right: 10px;
+            font-size: 2vw;
+            border-radius: 50%;
+            padding: 8px;
+        }
+        #page1 #mid #btm i{
+            cursor: pointer;
+        }
+        #page1 #mid #btm i:hover{
+            scale: 1.3;
+            transition: all ease-in-out 0.2s;
+        }
+
+
+        #page1 #mid #left h1{
+            font-size: 3.5vw;
+        }
+        #page1 #mid #left p{
+            letter-spacing: 3px;    
+            font-size: 1vw;
+        }
+        #page1 #mid #left #name h1{
+            color: #01FF9C;
+        }
+        #page1 #mid #left #name{
+            border-bottom: 55px;
+        }
+        #page1 #mid #right{
+            margin-top: 13%;  
+            position: relative;  
+            width: 55%;
+            height: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        #page1 #mid #right #border{
+            border-radius: 50%;
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border: dashed 5px #01FF9C;
+            z-index: 1;
+            animation: rotate 5s infinite;
+            animation-timing-function: linear;
+            box-shadow: 0px 0px 42px 0px #01FF9C;
+        }
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+            }
+            20%{transform: rotate(20deg);}
+            40%{
+                transform: rotate(40deg);
+            }
+            60%{transform: rotate(60deg);}
+            80%{transform: rotate(80deg);}
+            100%{transform: rotate(100deg);}
+        }
+        #page1 #mid #right #imgdiv{
+            padding: 10px;
+            z-index: 0;
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-image: url(me.jpeg);
+            background-position: center;
+            background-size: cover;
+            filter:drop-shadow();
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="cursor"></div>
+        <div id="corner"></div>
+        <div id="corner1"></div>
+        <div id="page1">
+            <div id="nav">
+                <div id="left">
+                    <h1>PortFolio</h1>
+                    <span class="dot">.</span>
+                </div>
+                <div id="right">
+                    <li>Home</li>
+                    <li class="about">About Me</li>
+                    <li>Resume</li>
+                    <li class="contact">Contact Me</li>
+                    <button id="hire">Hire Me</button>
+                </div>
+            </div>
+            <div id="aboutMePage">
+                <div id="icon">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div id="content">
+                    <h2>Know More About Me</h2>
+                    <div id="div1" class="divs">
+                        <h1>Name</h1>
+                        <p>Abhijith M I</p>
+                    </div>
+                    <div id="div2" class="divs">
+                        <h1>Phone</h1>
+                        <p>+91 8921 970 XXX</p>
+                    </div>
+                    <div id="div3" class="divs">
+                        <h1>Currently</h1>
+                        <p>A student at Amrita Vishwa Vidyapeetham, Coimbatore</p>
+                    </div>
+                    <div id="div4" class="divs">
+                        <h1>Degree</h1>
+                        <p>Btech CSE</p>
+                    </div>
+                </div>
+            </div>
+            <div id="contactPage">
+                <div id="icon">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div id="content">
+                    <h2>Contact Me</h2>
+                    <div id="div1" class="divs">
+                        <h1>Email</h1>
+                        <p>abhijith091006@gmail.com</p>
+                    </div>
+                    <div id="div2" class="divs">
+                        <h1>Phone</h1>
+                        <p>+91 8921 970 XXX</p>
+                    </div>
+                    <div id="div3" class="divs">
+                        <h3>Please Enter Your Feedback</h3>
+                        <p>Your feedback is special for me</p>
+                        <form action="#">
+                            <textarea name="feedback" id="feedback"></textarea>
+                            <button type="submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="hireMePage">
+                <div id="icon">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div id="content">
+                    <h2>Why Hire Me ?</h2>
+                    <div id="div1" class="divs">
+                        <h1>04</h1>
+                        <p>Years of Experience in Web Develpment and Programming</p>
+                    </div>
+                    <div id="div2" class="divs">
+                        <h1>20</h1>
+                        <p>Projects in Web Develpment and Programming</p>
+                    </div>
+                    <div id="div3" class="divs">
+                        <h1>08</h1>
+                        <p>Years of Experience in Web Develpment and Programming</p>
+                    </div>
+                </div>
+            </div>
+            <div id="mid">
+                <div id="circle"></div>
+                <div id="left">
+                    <span class="content small">Software Developer</span>
+                    <span><h1>Hello I'm</h1></span>
+                    <span id="name"><h1>Abhijith</h1></span>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>Tempora excepturi sit saepe pariatur</p>
+                    <div id="btm">
+                        <button class="cv">DOWNLOAD CV<i class="fa-solid fa-download"></i></button>
+                        <a href="https://github.com/jimitnick" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://youtube.com/@techielife9301?si=HoH1dlNBalKG0l1C"  target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/abhijith-m-i-a21042315/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="border"></div>
+                    <div id="imgdiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const hire =document.querySelector("#page1 #hireMePage");
+
+        const curosr  = document.querySelector("#main #cursor");
+
+        const contactPage=document.querySelector("#page1 #contactPage");
+        const aboutPage=document.querySelector("#page1 #aboutMePage");
+        const hireBtn = document.querySelector("#hire");
+        const closeBtnAbout = document.querySelector("#page1 #aboutMePage #icon");
+        const closeBtnContact = document.querySelector("#page1 #contactPage #icon");
+        const closeBtn = document.querySelector("#page1 #hireMePage #icon");
+        const contact  = document.querySelector("#main #page1 #nav #right .contact");
+        const about  = document.querySelector("#main #page1 #nav #right .about");
+        hireBtn.addEventListener('click',()=>{
+            if (hire.style.display === ''){
+                hire.style.display = 'flex';
+            }
+            else{
+                hire.style.display = '';
+            }
+        })
+        closeBtn.addEventListener('click',()=>{
+            if (hire.style.display === 'flex'){
+                hire.style.display = '';
+            }
+        })
+        contact.addEventListener('click',()=>{
+            if(contactPage.style.display === ""){
+                contactPage.style.display = "flex";
+            }
+        })
+        about.addEventListener('click',()=>{
+            if(aboutPage.style.display === ""){
+                aboutPage.style.display = "flex";
+            }
+        })
+
+        closeBtnAbout.addEventListener('click',()=>{
+            if (aboutPage.style.display === 'flex'){
+                aboutPage.style.display = '';
+            }
+        })
+
+        closeBtnContact.addEventListener('click',()=>{
+            if (contactPage.style.display === 'flex'){
+                contactPage.style.display = '';
+            }
+        })
+        document.querySelector("#main").addEventListener('mousemove',(dets)=>{
+            cursor.style.left = dets.x+"px";
+            cursor.style.top = dets.y+"px";
+        })
+    </script>
+</body>
+</html>
