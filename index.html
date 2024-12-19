@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortFolio website</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
@@ -217,7 +216,7 @@
             text-align: center;
         }
         #page1 #aboutMePage #content #div1 h1{
-            font-size: 1.5rem;
+            font-size: 1.5em;
             margin-right: 5%;
             margin-left: 2%;
         }
@@ -235,7 +234,7 @@
             text-align: center;
         }
         #page1 #aboutMePage #content #div2 h1{
-            font-size: 1.5rem;
+            font-size: 1.5em;
             margin-right: 5%;
             margin-left: 2%;
         }
@@ -253,12 +252,12 @@
             text-align: center;
         }
         #page1 #aboutMePage #content #div3 h1{
-            font-size: 1.5rem;
+            font-size: 1.5em;
             margin-right: 5%;
             margin-left: 2%;
         }
         #page1 #aboutMePage #content #div4 h1{
-            font-size: 1.5rem;
+            font-size: 1.5em;
             margin-right: 5%;
             margin-left: 2%;
         }
@@ -331,7 +330,7 @@
             text-align: center;
         }
         #page1 #hireMePage #content #div1 h1{
-            font-size: 4rem;
+            font-size: 4em;
             margin-right: 5%;
             margin-left: 2%;
         }
@@ -349,7 +348,7 @@
             text-align: center;
         }
         #page1 #hireMePage #content #div2 h1{
-            font-size: 4rem;
+            font-size: 4em;
             margin-right: 5%;
             margin-left: 2%;
         }
@@ -367,7 +366,7 @@
             text-align: center;
         }
         #page1 #hireMePage #content #div3 h1{
-            font-size: 4rem;
+            font-size: 4em;
             margin-right: 5%;
             margin-left: 2%;
         }
@@ -467,7 +466,7 @@
             border: solid 2px #01FFEA;
         }
         #page1 #contactPage #content #div3 form button{
-            height: 3rem;
+            height: 3em;
             border-radius: 10px;
             background-color: #01FFEA;
             color: #1C1B23;
@@ -477,17 +476,17 @@
             background-color: #01d0ff;
         }
         #page1 #contactPage #content #div1 h1{
-            font-size: 2rem;
+            font-size: 2em;
             margin-right: 5%;
             margin-left: 2%;
         }
         #page1 #contactPage #content #div2 h1{
-            font-size: 2rem;
+            font-size: 2em;
             margin-right: 5%;
             margin-left: 2%;
         }
         #page1 #contactPage #content #div3 h1{
-            font-size: 2rem;
+            font-size: 2em;
             margin-right: 5%;
             margin-left: 2%;
         }
@@ -617,12 +616,13 @@
             opacity: 0.1;
         }
         #page1 #mid #left{
-            width: 60%;
+            width: 55%;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            align-items: flex-end;
             justify-content: center;
-            margin-right: 10rem;
+            
         }
         #page1 #mid #btm{
             margin-top: 20px;
@@ -632,7 +632,7 @@
             align-items: center;
         }
         #page1 #mid #btm .cv{
-            padding: 12px 20px;
+            padding: 0.5em 1.5em;
             border-radius: 30px;
             border: solid 1px #01FF9C;
             background-color: #1C1B23;
@@ -669,9 +669,14 @@
         #page1 #mid #left h1{
             font-size: 3.5vw;
         }
-        #page1 #mid #left p{
-            letter-spacing: 3px;    
+        #page1 #mid #left #para{
+            display: flex;
+            text-align: justify;
+        }
+        #page1 #mid #left #para p{
+            letter-spacing: 2px;    
             font-size: 1vw;
+            align-content: flex-end;
         }
         #page1 #mid #left #name h1{
             color: #01FF9C;
@@ -689,6 +694,8 @@
             align-items: center;
             border-radius: 50%;
             object-fit: cover;
+            margin-right: 10rem;
+            margin-left: 5rem;
         }
         #page1 #mid #right #border{
             border-radius: 50%;
@@ -728,14 +735,175 @@
             background-size: cover;
             filter:drop-shadow();
         }
+        @media (max-width :892px) {
+            #main #page1 #mid{
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
+            #main #page1 #mid #right{
+                top: 15%;
+                left: 21%;
+                transform: translate(-50%,-50%);
+                position: absolute; 
+            }
+            #main #page1 #mid #circle{
+                display: none;
+            }
+            #main #page1 #mid #left{
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                font-size: 1.3em;
+                top: 43%;
+                position: absolute;
+            }
+            #main #page1 #mid #left #name h1{
+                font-size: 1.1em;
+            }
+            #main #page1 #mid #left #para p{
+                font-size: 0.5em;
+            }
+
+            #main #page1 #mid #left #btm a i{
+                font-size: 1em;
+            }
+            #main #page1 #mid #right #imgdiv{
+                width: 200px;
+                height: 200px;
+            }
+            #main #page1 #mid #right #border{
+                width: 200px;
+                height: 200px;
+            }
+            #main #page1 #nav #left h1{
+                font-size: 1.5em;
+                position: absolute;
+                left: -10%;
+
+            }
+            #main #page1 #nav{
+                display: none;
+            }
+            #main #page1 .fa-bars{
+                display: flex;
+                font-size: 2em;
+                z-index: 1;
+                top: 5%;
+                right: -13%;
+                position: absolute;
+            }
+            #main #hamburgerMenu .fa-bars{
+                display: block;
+                position: absolute;
+                right: 2%;
+                top: 2%;
+            }
+            #main #hamburgerMenu .fa-bars:hover{
+                scale: 1.1;
+                transition: all ease-in-out 0.3s;
+                color: #01FF9C;
+            }
+            #main .fa-x{
+                display: block;
+                top: 5%;
+                right: 5%;
+            }
+            #main .fa-bars{
+                font-size: 2rem;
+            }
+            #page1 #contactPage #content{
+                position: relative;
+                width: 50%;
+                left: 0%;
+                height: 50%;
+            }
+        }
+        @media (min-width: 892px) {
+            #main #page1 #nav{
+                display: flex;
+            }
+            #main #page1 .fa-bars{
+                display: none;
+            }
+            #page1 #contactPage{
+                width: 50%;
+                height: 90%;
+            }
+        }
+        #main #hamburgerMenu{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            background-color: rgb(0, 0, 0,0.75);
+            animation: slide 0.2s linear  forwards;
+            z-index: 5;
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+            padding: 1em 1em;
+        }
+        #main #hamburgerMenu #options{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 10px;
+        }
+        #main #hamburgerMenu #options li{
+            cursor: pointer;
+            padding: 1em;
+            text-align: center;
+            list-style: none;
+            border-top: 5em;
+        }
+        #main #hamburgerMenu li:hover{
+            color: #01FF9C;
+            scale: 1.2;
+            transition: all ease-in-out 0.2s;
+        }
+        #main #hamburgerMenu #options.fa-x{
+            position: absolute;
+            right: 2%;
+            top: 2%;
+        }
+        #main #hamburgerMenu button{
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            background-color: #000;
+            border: solid 2px #01FF9C;
+            color: #01FF9C;
+            cursor: pointer;
+            font-weight: 700;
+        }
+        #main #hamburgerMenu button:hover{
+            background-color: #01FF9C;
+            color: #222;
+            transition: all ease-in-out 0.2s;
+        }
     </style>
 </head>
 <body>
-    <div id="main">
+    <div id="main">   
+        <div id="hamburgerMenu">
+            <i class="fa-solid fa-x"></i>
+            <div id="options">
+                <li>Home</li>
+                <li class="about">About Me</li>
+                <li>Resume</li>
+                <li class="contact">Contact Me</li>
+                <button id="hire">Hire Me</button>
+            </div>
+        </div>
         <div id="cursor"></div>
         <div id="corner"></div>
         <div id="corner1"></div>
         <div id="page1">
+            <i class="fa-solid fa-bars"></i> 
             <div id="nav">
                 <div id="left">
                     <h1>PortFolio</h1>
@@ -819,11 +987,15 @@
             </div>
             <div id="mid">
                 <div id="circle"></div>
+                <div id="right">
+                    <div id="border"></div>
+                    <div id="imgdiv"></div>
+                </div>
                 <div id="left">
                     <span class="content small">Software Developer</span>
                     <span><h1>Hello I'm</h1></span>
                     <span id="name"><h1>Abhijith</h1></span>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>Tempora excepturi sit saepe pariatur</p>
+                    <span id="para"><p>I am a passionate tech enthusiast exploring the new opportunities in the Tech Industry and always striving to push my limits</p></span>
                     <div id="btm">
                         <button class="cv">DOWNLOAD CV<i class="fa-solid fa-download"></i></button>
                         <a href="https://github.com/jimitnick" target="_blank"><i class="fa-brands fa-github"></i></a>
@@ -831,10 +1003,7 @@
                         <a href="https://www.linkedin.com/in/abhijith-m-i-a21042315/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
                 </div>
-                <div id="right">
-                    <div id="border"></div>
-                    <div id="imgdiv"></div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -850,8 +1019,11 @@
         const closeBtnAbout = document.querySelector("#page1 #aboutMePage #icon");
         const closeBtnContact = document.querySelector("#page1 #contactPage #icon");
         const closeBtn = document.querySelector("#page1 #hireMePage #icon");
-        const contact  = document.querySelector("#main #page1 #nav #right .contact");
-        const about  = document.querySelector("#main #page1 #nav #right .about");
+        const contact  = document.querySelector(".contact");
+        const about  = document.querySelector(".about");
+        const hamburger = document.querySelector("#main #hamburgerMenu");
+        const hamburgerCloseBtn = document.querySelector("#main #hamburgerMenu .fa-x");
+        const hamburgerOption = document.querySelector("#main #page1 .fa-bars")
         hireBtn.addEventListener('click',()=>{
             if (hire.style.display === ''){
                 hire.style.display = 'flex';
@@ -885,6 +1057,18 @@
         closeBtnContact.addEventListener('click',()=>{
             if (contactPage.style.display === 'flex'){
                 contactPage.style.display = '';
+            }
+        })
+        hamburgerCloseBtn.addEventListener('click',()=>{
+            if (hamburger.style.display === "flex"){
+                hamburger.style.display = "";
+                hamburgerOption.style.display = "block";
+            }
+        })
+        hamburgerOption.addEventListener('click',()=>{
+            if (hamburger.style.display === ""){
+                hamburger.style.display = "flex";
+                hamburgerOption.style.display = "none";
             }
         })
         document.querySelector("#main").addEventListener('mousemove',(dets)=>{
