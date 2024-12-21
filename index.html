@@ -731,12 +731,16 @@
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            background-image: url(me.jpeg);
+            background-image: url("https://drive.google.com/file/d/1IEavRhEBD3y7VZC-yIG1tF4TxDgI5aQU/view?usp=sharing");
             background-position: center;
             background-size: cover;
             filter:drop-shadow();
         }
+        
         @media (max-width :1124px) {
+            #main #page1 #cursor{
+                display: none;
+            }
             #main #page1 #mid{
                 flex-direction: column;
                 justify-content: center;
@@ -814,7 +818,9 @@
                 font-size: 2rem;
             }
             #page1 #contactPage{
-                /* position: relative; */
+                position: relative;
+                left: -33%;
+                scale: 0.8;
                 width: 30em;
                 left: 0.5em;
                 top: 1%;
@@ -834,8 +840,10 @@
                 transform: translate(-50%,-50%);
             }
             #page1 #aboutMePage{
+                position: relative;
+                left: -33%;
+                scale: 0.8;
                 width: 30em;
-                left: 0.5em;
                 min-height: 100%;
                 top: 1%;
             }
@@ -854,7 +862,9 @@
             }
             #page1 #hireMePage{
                 width: 30em;
-                left: 0.5em;
+                position: relative;
+                left: -33%;
+                scale: 0.8;
                 min-height: 100%;
                 top: 1%;
             }
