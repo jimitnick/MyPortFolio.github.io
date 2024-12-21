@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortFolio website</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
@@ -735,17 +736,17 @@
             background-size: cover;
             filter:drop-shadow();
         }
-        @media (max-width :468px) {
+        @media (max-width :892px) {
             #main #page1 #mid{
                 flex-direction: column;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
             }
             #main #page1 #mid #right{
-                top: 15%;
-                left: 21%;
-                transform: translate(-50%,-50%);
-                position: absolute; 
+                left: 2em;
+                transform: translateY(-12em);
+                /* transform: translate(5em,5em); */
+                position: relative; 
             }
             #main #page1 #mid #circle{
                 display: none;
@@ -819,7 +820,7 @@
                 height: 50%;
             }
         }
-        @media (min-width: 470px) {
+        @media (min-width: 892px) {
             #main #page1 #nav{
                 display: flex;
             }
