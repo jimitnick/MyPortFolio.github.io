@@ -813,23 +813,71 @@
             #main .fa-bars{
                 font-size: 2rem;
             }
-            #page1 #contactPage #content{
+            #page1 #contactPage{
+                /* position: relative; */
+                width: 30em;
+                left: 0.5em;
+                top: 1%;
+                min-height: 100%;
+            }
+            #page1 #contactPage #icon{
                 position: relative;
-                width: 50%;
-                left: 0%;
-                height: 50%;
+                left: 90%;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+            #page1 #contactPage #icon i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            #page1 #aboutMePage{
+                width: 30em;
+                left: 0.5em;
+                min-height: 100%;
+                top: 1%;
+            }
+            #page1 #aboutMePage #icon{
+                position: relative;
+                left: 90%;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+            #page1 #aboutMePage #icon i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+            #page1 #hireMePage{
+                width: 30em;
+                left: 0.5em;
+                min-height: 100%;
+                top: 1%;
+            }
+            #page1 #hireMePage #icon{
+                position: relative;
+                left: 90%;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+            #page1 #hireMePage #icon i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
             }
         }
-        @media (min-width: 892px) {
+        @media (min-width: 1125px) {
             #main #page1 #nav{
                 display: flex;
             }
             #main #page1 .fa-bars{
                 display: none;
-            }
-            #page1 #contactPage{
-                width: 50%;
-                height: 90%;
             }
         }
         #main #hamburgerMenu{
@@ -1012,42 +1060,50 @@
     <script>
         const hire =document.querySelector("#page1 #hireMePage");
 
-        const curosr  = document.querySelector("#main #cursor");
+        const cursor  = document.querySelector("#main #cursor");
 
         const contactPage=document.querySelector("#page1 #contactPage");
         const aboutPage=document.querySelector("#page1 #aboutMePage");
-        const hireBtn = document.querySelector("#hire");
+        const hireBtn = document.querySelectorAll("#hire");
         const closeBtnAbout = document.querySelector("#page1 #aboutMePage #icon");
         const closeBtnContact = document.querySelector("#page1 #contactPage #icon");
         const closeBtn = document.querySelector("#page1 #hireMePage #icon");
-        const contact  = document.querySelector(".contact");
-        const about  = document.querySelector(".about");
+        const contact  = document.querySelectorAll(".contact");
+        const about  = document.querySelectorAll(".about");
         const hamburger = document.querySelector("#main #hamburgerMenu");
         const hamburgerCloseBtn = document.querySelector("#main #hamburgerMenu .fa-x");
         const hamburgerOption = document.querySelector("#main #page1 .fa-bars")
-        hireBtn.addEventListener('click',()=>{
+        hireBtn.forEach((btn)=>{
+            btn.addEventListener('click',()=>{
             if (hire.style.display === ''){
                 hire.style.display = 'flex';
             }
-            else{
-                hire.style.display = '';
-            }
         })
+        })
+        
         closeBtn.addEventListener('click',()=>{
             if (hire.style.display === 'flex'){
                 hire.style.display = '';
             }
         })
-        contact.addEventListener('click',()=>{
+        contact.forEach((btn)=>{
+            btn.addEventListener('click',()=>{
             if(contactPage.style.display === ""){
                 contactPage.style.display = "flex";
+                console.log("Clicked");
+                
             }
         })
-        about.addEventListener('click',()=>{
+        })
+        
+        about.forEach((btn)=>{
+            btn.addEventListener('click',()=>{
             if(aboutPage.style.display === ""){
                 aboutPage.style.display = "flex";
             }
         })
+        })
+        
 
         closeBtnAbout.addEventListener('click',()=>{
             if (aboutPage.style.display === 'flex'){
