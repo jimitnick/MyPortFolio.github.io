@@ -950,7 +950,7 @@
         <div id="hamburgerMenu">
             <i class="fa-solid fa-x"></i>
             <div id="options">
-                <li>Home</li>
+                <li class="home">Home</li>
                 <li class="about">About Me</li>
                 <li>Resume</li>
                 <li class="contact">Contact Me</li>
@@ -968,7 +968,7 @@
                     <span class="dot">.</span>
                 </div>
                 <div id="right">
-                    <li>Home</li>
+                    <li class="home">Home</li>
                     <li class="about">About Me</li>
                     <li>Resume</li>
                     <li class="contact">Contact Me</li>
@@ -1070,7 +1070,7 @@
         const hire =document.querySelector("#page1 #hireMePage");
 
         const cursor  = document.querySelector("#main #cursor");
-
+        const home = document.querySelectorAll(".home");
         const contactPage=document.querySelector("#page1 #contactPage");
         const aboutPage=document.querySelector("#page1 #aboutMePage");
         const hireBtn = document.querySelectorAll("#hire");
@@ -1081,7 +1081,13 @@
         const about  = document.querySelectorAll(".about");
         const hamburger = document.querySelector("#main #hamburgerMenu");
         const hamburgerCloseBtn = document.querySelector("#main #hamburgerMenu .fa-x");
-        const hamburgerOption = document.querySelector("#main #page1 .fa-bars")
+        const hamburgerOption = document.querySelector("#main #page1 .fa-bars");
+        home.forEach((btn)=>{
+            btn.addEventListener('click',()=>{
+                hamburger.style.display = "";
+                hamburgerOption.style.display = "block";
+            })
+        })
         hireBtn.forEach((btn)=>{
             btn.addEventListener('click',()=>{
             if (hire.style.display === ''){
