@@ -1086,6 +1086,7 @@
             btn.addEventListener('click',()=>{
             if (hire.style.display === ''){
                 hire.style.display = 'flex';
+                hamburger.style.display = "";
             }
         })
         })
@@ -1093,12 +1094,14 @@
         closeBtn.addEventListener('click',()=>{
             if (hire.style.display === 'flex'){
                 hire.style.display = '';
+                hamburgerOption.style.display = "block";
             }
         })
         contact.forEach((btn)=>{
             btn.addEventListener('click',()=>{
             if(contactPage.style.display === ""){
                 contactPage.style.display = "flex";
+                hamburger.style.display = "";
                 console.log("Clicked");
                 
             }
@@ -1109,6 +1112,8 @@
             btn.addEventListener('click',()=>{
             if(aboutPage.style.display === ""){
                 aboutPage.style.display = "flex";
+                contactPage.style.display = "";
+                hamburger.style.display = "";
             }
         })
         })
@@ -1117,12 +1122,14 @@
         closeBtnAbout.addEventListener('click',()=>{
             if (aboutPage.style.display === 'flex'){
                 aboutPage.style.display = '';
+                hamburgerOption.style.display = "block";
             }
         })
 
         closeBtnContact.addEventListener('click',()=>{
             if (contactPage.style.display === 'flex'){
                 contactPage.style.display = '';
+                hamburgerOption.style.display = "block";
             }
         })
         hamburgerCloseBtn.addEventListener('click',()=>{
