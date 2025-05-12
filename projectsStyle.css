@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tagesschrift&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Tagesschrift&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#navbar{
+    display: flex;
+    width: 65%;
+    background: #444;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    height: 4rem;
+    padding: 25px;
+    border-radius: 50px;
+    box-shadow: 10px 5px 20px 0px #55d6aa;
+    z-index: 1;
+    position: absolute;
+}
+#projects{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-bottom: 60px;
+    z-index: 1;
+    position: absolute;
+    width: 80%;
+}
+#square{
+    width: 100%;
+    height: 100%;
+    background: #55d6aa;
+    position: absolute;
+    z-index: 0;
+}
+
+h1,h2{
+    text-align: center;
+    color: #fff;
+    font-family: "Roboto Mono", monospace;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    background: #55d6aa;
+    padding: 6px;
+    border-radius: 10px;
+}
+#projects .row1 .contents{
+    height: 350px;
+    width: 450px;
+    background: #55d6aa;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+#projects .row1 #contents:hover{
+    box-shadow: 0px 5px 20px 7px #fff;
+    transition: all ease-in-out 0.2s;
+}
+#projects .row2 .contents{
+    height: 350px;
+    width: 450px;
+    background: #55d6aa;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+#projects .row2 #contents:hover{
+    box-shadow: 0px 5px 20px 7px #fff;
+    transition: all ease-in-out 0.2s;
+}
+#projects p{
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#projects h2{
+    text-decoration: underline;
+}
+#projects #head h2{
+    text-decoration: none;
+}
+#projects div img{
+    object-fit: contain;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-position: center;
+}
